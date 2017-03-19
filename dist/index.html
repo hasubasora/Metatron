@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+    <!--<link rel="stylesheet" type="text/css" href="framework\bootstrap.min.css">-->
+    <script type="text/javascript" src="framework/jquery.1.11.1.min.js"></script>
+    <!--<script type="text/javascript" src="framework/bootstrap.min.js"></script>-->
+    <script type="text/javascript" src="framework/vue.js"></script>
+    <!--<script type="text/javascript" src="framework/vue.min.js"></script>-->
+
+    <script src="javascripts/app.js"></script>
+    <title>首页</title>
+    <style>
+        .completed {
+            color: chartreuse;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+
+<body>
+    <!-- canvas -->
+    <div class="container">
+        <div id="particles-js"></div>
+    </div>
+    <!-- canvas -->
+    <!--header-->
+    <header>
+        <nav class="menu">
+            <ul class='menuList'>
+                <li v-for="item in topPage"><a :href=item.url>{{item.likes}}</a></li>
+            </ul>
+            <div class='menuList'>
+                <div class="fs-group">
+                    <input type="search" id="search" placeholder="search...">
+                    <a href='#'>搜索</a>
+                </div>
+
+                <a href='#'>注册</a>
+                <a href="javascript:void(0)">|</a>
+                <a href='#'>登陆</a>
+            </div>
+        </nav>
+    </header>
+    <!--header-->
+    <script>
+        new Vue({
+            el: '.menu',
+            data: {
+                topPage: [{
+                    likes: '商场首页',
+                    url: '#'
+                }, {
+                    likes: '案例首页',
+                    url: '#'
+                }, {
+                    likes: '面试问题',
+                    url: '#'
+                }]
+            },
+            methods: {
+
+            }
+        })
+    </script>
+
+
+    <!--menu-->
+    <div class="containers">
+        <nav aria-label="...">
+            <ul class="pager">
+                <li v-for="item in types"><a v-bind:href="'#/'+item.link"><span :data-nav='item.title'>{{item.title}}</span></a></li>
+
+            </ul>
+        </nav>
+        <!--绑定模板-->
+        <!--绑定模板上面的键-->
+
+        <component v-bind:is="show"></component>
+        <section class="home-page">
+            <div class="left-article">
+                <h2><span>网络日志</span></h2>
+                <ul>
+                    <li v-for="item in types"><a v-bind:href="'#/'+item.link"><span :data-nav='item.title'>{{item.title}}</span></a></li>
+                </ul>
+            </div>
+            <div class="right-article"> 分类</div>
+        </section>
+    </div>
+    <!--menu-->
+</body>
+
+
+</html>

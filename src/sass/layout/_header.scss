@@ -1,0 +1,50 @@
+header {
+    // background: #e3e4e4;
+    background: #000;
+    @include height(30px);
+    font-size: 12px;
+    box-shadow: 0px 0px 10px 0px #eee;
+    .menu {
+        width: nth($size, 1);
+        @include breakpoint($big) {
+            width: nth($size, 2);
+        }
+        margin: 0 auto;
+        .menuList {
+            @include span(6);
+            li {
+                a {
+                    @include span(1.5);
+                    color: #e3e4e4;
+                }
+            }
+            &:nth-child(2) {
+                .fs-group {
+                    @include span(6);
+                    [type=search] {
+                        @include span(9);
+                        border: 1px solid #eee;
+                        border-radius: 50px;
+                        outline: 0;
+                        text-indent: fontSize(5);
+                        line-height: fontSize(20);
+                        margin-top: 2px;
+                    }
+                    >a {
+                        @include span(3);
+                        padding: 0 fontSize(10);
+                        color: #e3e4e4;
+                    }
+                }
+                a {
+                    padding: 0 fontSize(5);
+                    float: right;
+                    color: #e3e4e4;
+                    &:hover {
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+}

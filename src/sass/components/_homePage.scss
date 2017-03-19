@@ -1,0 +1,36 @@
+.home-page {
+    .left-article {
+        border: 1px solid nth($color, 1);
+        border-bottom-right-radius: 50px;
+        @include span(9.5);
+        padding: 0;
+        background: #000;
+        h2 {
+            background: url('../images/Ltit_02.gif');
+            height: fontSize(28);
+            span {
+                background: url('../images/Ltit_01.gif') no-repeat;
+                line-height: fontSize(22);
+                height: fontSize(28);
+                width: 200px;
+                float: left;
+                display: block;
+                text-indent: 50px;
+                color: #fff;
+            }
+        }
+        ul {
+            @include span(12);
+            li {
+                @include height(30px);
+            }
+        }
+    }
+    .right-article {
+        border: 1px solid nth($color, 1);
+        border-radius: 5px;
+        @include span(2.4);
+        float: right;
+        background: #000;
+    }
+}
