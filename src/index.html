@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
     <!--<link rel="stylesheet" type="text/css" href="framework\bootstrap.min.css">-->
-    <script type="text/javascript" src="framework/jquery.1.11.1.min.js"></script>
+    <script type="text/javascript" src="framework/jquery.1.11.1.min.js" async></script>
     <!--<script type="text/javascript" src="framework/bootstrap.min.js"></script>-->
     <script type="text/javascript" src="framework/vue.js"></script>
     <!--<script type="text/javascript" src="framework/vue.min.js"></script>-->
@@ -13,7 +13,7 @@
     <title>首页</title>
     <style>
         .completed {
-            color: chartreuse;
+            color: #00FF80;
             text-decoration: line-through;
         }
     </style>
@@ -79,15 +79,7 @@
         <!--绑定模板上面的键-->
 
         <component v-bind:is="show"></component>
-        <section class="home-page">
-            <div class="left-article">
-                <h2><span>网络日志</span></h2>
-                <ul>
-                    <li v-for="item in types"><a v-bind:href="'#/'+item.link"><span :data-nav='item.title'>{{item.title}}</span></a></li>
-                </ul>
-            </div>
-            <div class="right-article"> 分类</div>
-        </section>
+
     </div>
     <!--menu-->
 </body>
